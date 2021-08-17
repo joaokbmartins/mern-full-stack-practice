@@ -1,2 +1,2 @@
-# mern-full-stack-practice
-Project thought to practice mern stack: NodeJS + MongoDB + Rect + Redux
+# Notes App!
+Practicing Node JS concepts with a notes app.
