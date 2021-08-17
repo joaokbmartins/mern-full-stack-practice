@@ -1,0 +1,11 @@
+{
+	"name" : "devconnector", 
+	"version": "1.0.0",
+	"description": "Developer's social network",
+	"main": "server.js",
+	"scripts": {
+		"test": "exit 1",
+	},
+	"author":  "João K. B. Martins",
+	"license": "MIT"
+}
