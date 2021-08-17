@@ -1,11 +1,22 @@
 {
-	"name" : "devconnector", 
-	"version": "1.0.0",
-	"description": "Developer's social network",
-	"main": "server.js",
-	"scripts": {
-		"test": "exit 1",
-	},
-	"author":  "João K. B. Martins",
-	"license": "MIT"
+  "name": "node-notes-app",
+  "version": "1.0.0",
+  "description": "Notes app built with NodeJS.",
+  "main": "server.js",
+  "scripts": {
+    "test": "exit 1"
+  },
+  "author": "João K. B. Martins",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaokbmartins/node-notes-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joaokbmartins/node-notes-app/issues"
+  },
+  "homepage": "https://github.com/joaokbmartins/node-notes-app#readme",
+  "dependencies": {
+    "validator": "^13.6.0"
+  }
 }
