@@ -1,2 +1,0 @@
-test file created by node.js fs.writeFileSync
-TEXT APPENDED BY THE BRABO

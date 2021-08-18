@@ -1,15 +1,32 @@
-const validator = require('validator');
+const fs = require('fs');
+const yargs = require('yargs');
 const chalk = require('chalk');
-const batata = require('./utils.js');
-const getNotes = require('./notes.js');
 
-console.log('isEmail: ', validator.isEmail('test@batata.com'));
-console.log('isUrl: ', validator.isURL('https://google.com'));
+const command = process.argv[2];
+const note_title = yargs.argv['title'];
+const note_content = yargs.argv['body'];
+const note_file_name = yargs.argv['file'];
 
-console.log(chalk.green('Access Granted'));
-console.log(chalk.bgYellow.red.bold('Access Denied'));
+// \
 
-console.log(batata(1, 3));
-console.log(getNotes());
+addNote = () => {
+	fs.writeFileSync(note_file_name, note_title.toUpperCase());
+	fs.appendFileSync(note_file_name, "\n");
+	fs.appendFileSync(note_file_name, note_content);
+	console.log(chalk.inverse.bold.green(' New note successfully created!!! '));
+}
 
-console.log(process.argv[2]);
+deleteNote = () => {
+	console.log('Deleting note...');
+}
+
+switch(command){
+	case 'add':
+		addNote();
+		break;
+	case 'delete':
+		deleteNote();
+		break;
+	default:
+		console.log('default option...');
+}
