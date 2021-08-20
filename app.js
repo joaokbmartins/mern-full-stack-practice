@@ -2,7 +2,8 @@ const fs = require('fs');
 const yargs = require('yargs');
 const chalk = require('chalk');
 
-const note_file_name = 'notes/' + yargs.argv['file'];
+const notes_root = 'notes/';
+const note_file_name = notes_root + yargs.argv['file'];
 
 logSuccess = (message) => {
 	console.log(chalk.green.bold.inverse(' ' + message + ' '));
@@ -31,6 +32,15 @@ addNote = () => {
 	logSuccess('New note successfully created!!!');
 }
 
+listNotes = () => {
+	fs.readdirSync(notes_root).forEach(note => console.log(note));
+}
+
+readNote = () => {
+	const content = fs.readFileSync(note_file_name);
+	console.log(content);
+}
+
 yargs
 	.command('delete', 'Delete a note.', function() { 
 		deleteFunction();
@@ -42,5 +52,11 @@ yargs
 			return;
 		}
 		addNote();
-	}
-).help().argv; 
+	})
+	.command('list', 'List notes', function() {
+		listNotes();
+	})
+	.command('read', 'Read note content', function() {
+		readNote();
+	})
+.help().argv; 
